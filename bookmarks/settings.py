@@ -20,14 +20,16 @@ ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'account.apps.AccountConfig',
+    'images.apps.ImagesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'social_django',
-    'django_extensions',
+    # 'social_django',
+    # 'django_extensions',
+    # 'pillow',
 ]
 
 MIDDLEWARE = [
@@ -107,7 +109,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATICFILES_DIRS = [BASE_DIR / "static"]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
@@ -127,8 +129,6 @@ AUTHENTICATION_BACKENDS = [
     'account.authentication.EmailBackend',
     'social_core.backends.google.GoogleOAuth2',
     'social_core.backends.facebook.FacebookOAuth2',
-    'cocial_core.backends.twitter.TwitterOAuth2',
-    'cocial_core.backends.google.GoogleOAuth2',
 ]
 
 SOCIAL_AUTH_PIPELINE = [ 
